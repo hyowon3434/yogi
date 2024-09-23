@@ -1,8 +1,10 @@
 package com.example.yogi_project.example.domain;
 
 import lombok.Getter;
+import org.apache.ibatis.type.Alias;
 
 @Getter
+@Alias("AccommodationVO")
 public class AccommodationVO {
     private Long accommodationId; // 숙소 고유 ID
     private String name; // 숙소 이름
