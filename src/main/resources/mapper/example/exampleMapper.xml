@@ -5,4 +5,14 @@
     <select id="ExampleMybatis" resultType="com.example.yogi_project.example.domain.AccommodationVO">
         select * from accommodation;
     </select>
+
+    <select id="ExampleMybatisPaging" resultType="com.example.yogi_project.example.domain.AccommodationVO">
+        SELECT * FROM accommodation
+        ORDER BY accommodation_id
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+    <select id="ExampleMyBatisPagingCountAll" resultType="java.lang.Integer">
+        select count(*) from accommodation;
+    </select>
 </mapper>
