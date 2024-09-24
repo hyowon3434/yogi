@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.yogi_project.example.dao.ExampleMapper">
-    <select id="ExampleMybatis" resultType="com.example.yogi_project.example.domain.AccommodationVO">
+    <select id="ExampleMybatis" resultType="com.example.yogi_project.example.domain.ExampleVO">
         select * from accommodation;
     </select>
 
-    <select id="ExampleMybatisPaging" resultType="com.example.yogi_project.example.domain.AccommodationVO">
+    <select id="ExampleMybatisPaging" resultType="com.example.yogi_project.example.domain.ExampleVO">
         SELECT * FROM accommodation
         ORDER BY accommodation_id
         LIMIT #{pageSize} OFFSET #{offset}

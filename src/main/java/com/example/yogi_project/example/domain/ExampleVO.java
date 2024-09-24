@@ -4,8 +4,8 @@ import lombok.Getter;
 import org.apache.ibatis.type.Alias;
 
 @Getter
-@Alias("AccommodationVO")
-public class AccommodationVO {
+@Alias("ExampleVO")
+public class ExampleVO {
     private Long accommodationId; // 숙소 고유 ID
     private String name; // 숙소 이름
     private String address; // 숙소 주소

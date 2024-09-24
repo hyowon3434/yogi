@@ -1,7 +1,7 @@
 package com.example.yogi_project.example.controller;
 
 import com.example.yogi_project.example.dao.ExampleMapper;
-import com.example.yogi_project.example.domain.AccommodationVO;
+import com.example.yogi_project.example.domain.ExampleVO;
 import com.example.yogi_project.example.service.ExampleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -31,8 +29,8 @@ public class ExampleController {
     private final ExampleService exampleService;
 
     @GetMapping("/01")
-    public List<AccommodationVO> getEx(){
-        List<AccommodationVO> ExampList = exampleMapper.ExampleMybatis();
+    public List<ExampleVO> getEx(){
+        List<ExampleVO> ExampList = exampleMapper.ExampleMybatis();
         log.info(ExampList.get(0).getAddress());
         log.info(ExampList.get(0).getAddress());
 
@@ -41,7 +39,7 @@ public class ExampleController {
 
     @GetMapping("/paging")
     public ResponseEntity<Map<String, Object>> getExPaging(@PageableDefault(size=1,page=1) Pageable pageable){
-       Page<AccommodationVO> postByPageNumber = exampleService.ExampleMybatisPaging(pageable);
+       Page<ExampleVO> postByPageNumber = exampleService.ExampleMybatisPaging(pageable);
 
        Map<String,Object> response = new HashMap<>();
        response.put("posts",postByPageNumber.getContent());

@@ -1,7 +1,7 @@
 package com.example.yogi_project.example.service;
 
 import com.example.yogi_project.example.dao.ExampleMapper;
-import com.example.yogi_project.example.domain.AccommodationVO;
+import com.example.yogi_project.example.domain.ExampleVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -16,8 +16,8 @@ public class ExampleServiceImpl implements ExampleService{
 
     private final ExampleMapper exampleMapper;
     @Override
-    public Page<AccommodationVO> ExampleMybatisPaging(Pageable pageable) {
-        List<AccommodationVO> postByPageNumber = exampleMapper.ExampleMybatisPaging(pageable.getPageSize(),pageable.getOffset());
+    public Page<ExampleVO> ExampleMybatisPaging(Pageable pageable) {
+        List<ExampleVO> postByPageNumber = exampleMapper.ExampleMybatisPaging(pageable.getPageSize(),pageable.getOffset());
 
         Integer totalPost = exampleMapper.ExampleMyBatisPagingCountAll();
 
