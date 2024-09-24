@@ -8,7 +8,7 @@
 
     <select id="ExampleMybatisPaging" resultType="com.example.yogi_project.example.domain.ExampleVO">
         SELECT * FROM accommodation
-        ORDER BY accommodation_id
+        ORDER BY accommodationId
         LIMIT #{pageSize} OFFSET #{offset}
     </select>
 

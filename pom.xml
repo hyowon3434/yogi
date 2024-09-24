@@ -78,6 +78,17 @@
         </dependency>
 
 
+        <!-- JSP 관련 의존성 추가 -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 
