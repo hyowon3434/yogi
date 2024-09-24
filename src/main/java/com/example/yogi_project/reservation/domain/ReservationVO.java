@@ -8,8 +8,8 @@ import org.apache.ibatis.type.Alias;
 @Getter
 @Setter
 @NoArgsConstructor
-@Alias("reservationVO")
-public class reservationVO {
+@Alias("ReservationVO")
+public class ReservationVO {
     private String reservationId;
     private String email;
     private String chkInDttm;

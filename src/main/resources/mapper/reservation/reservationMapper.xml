@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.yogi_project.reservation.dao.ReservationDao">
+    <select id="getReservations" parameterType="ReservationVO" resultType="ReservationVO">
+        SELECT *
+        FROM reservation
+        WHERE
+            1=1
+            <if test="reservationId != null and reservationId != '' ">
+                AND reservationId = #{reservationId}
+            </if>
+            <if test="email != null and email != '' ">
+                AND email = #{email}
+            </if>
+            <if test="accommodationName != null and accommodationName != '' ">
+                AND accommodationName = #{accommodationName}
+            </if>
+            <if test="chkInDttm != null and chkInDttm != '' ">
+                AND chkInDttm = #{chkInDttm}
+            </if>
+            <if test="chkOutDttm != null and chkOutDttm != '' ">
+                AND chkOutDttm = #{chkOutDttm}
+            </if>
+            <if test="numberOfGuests != null and numberOfGuests != '' ">
+                AND numberOfGuests = #{numberOfGuests}
+            </if>
+            <if test="totalPrice != null and totalPrice != '' ">
+                AND totalPrice = #{totalPrice}
+            </if>
+    </select>
+
+    <insert id="newReservation" parameterType="ReservationVO">
+        INSERT INTO reservation
+        (
+         email,
+         chkInDttm,
+         chkOutDttm,
+         numberOfGuests,
+         totalPrice,
+         accommodationName
+        ) VALUES
+        (
+         #{email},
+         #{chkInDttm},
+         #{chkOutDttm},
+         #{numberOfGuests},
+         #{totalPrice},
+         #{accommodationName}
+        )
+    </insert>
+
+    <update id="putReservation" parameterType="ReservationVO">
+        UPDATE reservation
+        SET
+            email = #{email},
+            chkInDttm = #{chkInDttm},
+            chkOutDttm = #{chkOutDttm},
+            numberOfGuests = #{numberOfGuests},
+            totalPrice = #{totalPrice},
+            accommodationName = #{accommodationName}
+        WHERE
+            1=1
+            <if test="reservationId != null and reservationId != ''">
+                AND reservationId = #{reservationId}
+            </if>
+    </update>
+
+    <delete id="delReservation" parameterType="ReservationVO">
+        <if test="reservationId != null and reservationId != ''">
+            DELETE FROM reservation
+            WHERE
+                reservationId = #{reservationId}
+        </if>
+
+    </delete>
+</mapper>
+
+

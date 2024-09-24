@@ -36,7 +36,6 @@
     <insert id="newAccommodation" parameterType="AccommodationVO">
         INSERT INTO accommodation
         (
-         accommodationId,
          name,
          address,
          description,
@@ -46,7 +45,6 @@
          standardCapacity
         ) VALUES
         (
-         #{accommodationId},
          #{name},
          #{address},
          #{description},
@@ -66,7 +64,11 @@
             price = #{price},
             imageTitle = #{imageTitle},
             standardCapacity = #{standardCapacity}
-
+        WHERE
+            1=1
+            <if test="accommodationId != null and accommodationId != ''">
+                AND accommodationId = #{accommodationId}
+            </if>
     </update>
 
     <delete id="delAccommodation" parameterType="AccommodationVO">
