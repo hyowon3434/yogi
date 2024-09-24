@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.yogi_project.review.dao.ReviewDao">
+    <select id="getReviews" parameterType="ReviewVO" resultType="ReviewVO">
+        SELECT *
+        FROM accommo_review
+        WHERE
+            1=1
+            <if test="reviewId != null and reviewId != '' ">
+                AND reviewId = #{reviewId}
+            </if>
+            <if test="accommodationId != null and accommodationId != '' ">
+                AND accommodationId = #{accommodationId}
+            </if>
+            <if test="reviewUserId != null and reviewUserId != '' ">
+                AND reviewUserId = #{reviewUserId}
+            </if>
+            <if test="reviewContent != null and reviewContent != '' ">
+                AND reviewContent = #{reviewContent}
+            </if>
+            <if test="createdDttm != null and createdDttm != '' ">
+                AND createdDttm = #{createdDttm}
+            </if>
+            <if test="updatedDttm != null and updatedDttm != '' ">
+                AND updatedDttm = #{updatedDttm}
+            </if>
+    </select>
+
+    <insert id="newReview" parameterType="ReviewVO">
+        INSERT INTO accommo_review
+        (
+            accommodationId,
+            reviewUserId,
+            reviewContent,
+            createdDttm,
+            updatedDttm
+        ) VALUES
+        (
+             #{accommodationId},
+             #{reviewUserId},
+             #{reviewContent},
+             NOW(),
+             NOW()
+        )
+    </insert>
+
+    <update id="putReview" parameterType="ReviewVO">
+        UPDATE accommo_review
+        SET
+        accommodationId = #{accommodationId},
+        reviewUserId = #{reviewUserId},
+        reviewContent = #{reviewContent},
+        updatedDttm = NOW()
+        WHERE
+            1=1
+            <if test="reviewId != null and reviewId != ''">
+                AND reviewId = #{reviewId}
+            </if>
+    </update>
+
+    <delete id="delReview" parameterType="ReviewVO">
+        <if test="reviewId != null and reviewId != ''">
+            DELETE FROM accommo_review
+            WHERE
+                reviewId = #{reviewId}
+        </if>
+
+    </delete>
+</mapper>
+
+
