@@ -3,7 +3,6 @@ package com.example.yogi_project.accommodation.controller;
 import com.example.yogi_project.accommodation.dao.AccommodationDao;
 import com.example.yogi_project.accommodation.domain.AccommodationVO;
 import com.example.yogi_project.accommodation.service.AccommodationService;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/stay")
 @Slf4j
 public class AccommodationController {
 
@@ -23,11 +23,22 @@ public class AccommodationController {
     @Autowired
     private AccommodationService accommodationService;
 
-    @GetMapping("/main")
+    // 숙소 전체 조회
+    @GetMapping
     public String getAccmmodations(Model model, AccommodationVO param){
         List<AccommodationVO> accommodations = accommodationService.getAccommodations(param);
         model.addAttribute("accommodations", accommodations);
         log.info(accommodations.get(0).getImageTitle());
+        return "main";
+    }
+
+    // 숙소 필터링 검색
+    @GetMapping("/search")
+    public String getAccommodation(Model model, AccommodationVO param){
+        List<AccommodationVO> filteredAccommodation = accommodationService.getAccommodations(param);
+        model.addAttribute("accommodations", filteredAccommodation);
+        log.warn(filteredAccommodation.get(0).getDescription());
+
         return "main";
     }
 
