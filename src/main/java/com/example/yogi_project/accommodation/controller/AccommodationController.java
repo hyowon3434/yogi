@@ -5,6 +5,7 @@ import com.example.yogi_project.accommodation.domain.AccommodationVO;
 import com.example.yogi_project.accommodation.service.AccommodationService;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/stay")
 @RequiredArgsConstructor
+@Slf4j
 public class AccommodationController {
 
     @Autowired
@@ -22,11 +23,12 @@ public class AccommodationController {
     @Autowired
     private AccommodationService accommodationService;
 
-    @GetMapping
+    @GetMapping("/main")
     public String getAccmmodations(Model model, AccommodationVO param){
         List<AccommodationVO> accommodations = accommodationService.getAccommodations(param);
         model.addAttribute("accommodations", accommodations);
-        return null;
+        log.info(accommodations.get(0).getImageTitle());
+        return "main";
     }
 
     @PostMapping
