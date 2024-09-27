@@ -20,11 +20,11 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @GetMapping
+    @GetMapping("/review")
     public String getReviews(Model model, ReviewVO param){
         List<ReviewVO> reviews = reviewService.getReviews(param);
         model.addAttribute("reviews", reviews);
-        return null;
+        return "review";
     }
 
     @PostMapping

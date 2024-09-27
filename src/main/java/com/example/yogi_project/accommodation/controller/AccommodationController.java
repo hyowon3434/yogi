@@ -23,7 +23,7 @@ public class AccommodationController {
     @Autowired
     private AccommodationService accommodationService;
 
-    @GetMapping("/main")
+    @GetMapping("/")
     public String getAccmmodations(Model model, AccommodationVO param){
         List<AccommodationVO> accommodations = accommodationService.getAccommodations(param);
         model.addAttribute("accommodations", accommodations);
@@ -48,4 +48,5 @@ public class AccommodationController {
         accommodationService.delAccommodation(param);
         return null;
     }
+
 }
