@@ -11,8 +11,8 @@ import org.apache.ibatis.type.Alias;
 @Alias("ReviewVO")
 public class ReviewVO {
     private Integer reviewId;
-    private String accommodationId;
-    private String reviewUserId;
+    private Integer accommodationId;
+    private Integer reviewUserId;
     private String reviewContent;
     private String createdDttm;
     private String updatedDttm;
