@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>저기어때</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 <body>
@@ -32,7 +33,20 @@
                         <input type="text" id="pr-num-area">
                         <button type="submit" id="search-submit">검색</button>
                     </form>
+                </div>
 
+                <div class="section-box2">
+                    <form action="/stay" enctype="multipart/form-data" method="post">
+                        <input type="text" id="name" name="name" placeholder="숙소명"><br>
+                        <input type="text" id="address" name="address" placeholder="주소"><br>
+                        <input type="text" id="type" name="type" placeholder="숙소타입"><br>
+                        <input type="text" id="price" name="price" placeholder="가격"><br>
+                        <input type="file" name="file"><br>
+                        <textarea id="description" name="description" placeholder="설명"></textarea>
+                        <button type="submit">등록</button>
+                    </form>
+
+<%--                    <a href="${accommodations.imagePath}"></a>--%>
                 </div>
             </div>
         </div>
@@ -41,11 +55,11 @@
             <div class="reserve-list-area">
                 <c:forEach var="accommodation" items="${accommodations}">
                     <div class="com">
-                        <div class="com-img-area" style="background-image: url('${accommodation.imageTitle}'); "></div>
+                        <div class="com-img-area" style="background-image: url('${accommodation.imagePath}'); "></div>
                         <p>${accommodation.type}</p>
                         <p>${accommodation.name}</p>
                         <p>${accommodation.address}</p>
-                        <p>${accommodation.price}원</p>
+                        <p><fmt:formatNumber value="${accommodation.price}" pattern="#,###"/>원</p>
                     </div>
                 </c:forEach>
             </div>

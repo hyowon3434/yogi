@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,18 +39,18 @@
         </div>
 
         <div class="main-content">
-            <p>호텔</p>
-            <p>구월 호텔반월</p>
+            <p>${accommodations[0].type}</p>
+            <p>${accommodations[0].name}</p>
             <p>리뷰보기</p>
             <div class="main-content-wrap">
             <div class="review-box-area">
-                <div class="box">
-                    <p>구월 호텔반월을 처음 이용하게 되었어요.
-                        호텔반월을 이용하면서 깜짝 놀랄일들이 많아서 리뷰를 작성하게 되었네요~^^</p></div>
-                <div class="box"><p>조식을 먹으려고 오는건지?
-                    숙박을 하려고 오는건지? 이젠 솔직히 나도 헷갈릴때가 있는 호텔 입니다.</p></div>
-                <div class="box"><p>집에서 도보로 30분 거리에 있는 호텔반월~
-                    호텔반월은 구월아시아드에 있습니다</p></div>
+                <c:forEach var="reviews" items="${reviews}">
+                    <div class="box">
+                        <p>
+                            ${reviews.reviewContent}
+                        </p>
+                    </div>
+                </c:forEach>
             </div>
             <div class="room-wrap">
              <!-- 반복부분 -->
@@ -70,7 +72,7 @@
                                 <p>입실 14:00</p>
                                 <p>퇴실 14:00</p>
                                 <div class="sub-price">
-                                    <p>40,500원</p>
+                                    <p><fmt:formatNumber value="${accommodations[0].price}" pattern="#,###"/></p>
                                     <button>숙박 예약</button>
                                 </div>
                             </div>
@@ -98,7 +100,7 @@
                             <p>입실 14:00</p>
                             <p>퇴실 14:00</p>
                             <div class="sub-price">
-                                <p>40,500원</p>
+                                <p><fmt:formatNumber value="${accommodations[0].price}" pattern="#,###"/></p>
                                 <button>숙박 예약</button>
                             </div>
                         </div>
