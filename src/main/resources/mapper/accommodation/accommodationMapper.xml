@@ -28,7 +28,9 @@
             <if test="imageTitle != null and imageTitle != '' ">
                 AND imageTitle = #{imageTitle}
             </if>
-
+            <if test="imagePath != null and imagePath != '' ">
+                AND imagePath = #{imagePath}
+            </if>
             <if test="standardCapacity != null and standardCapacity != '' ">
                 AND standardCapacity = #{standardCapacity}
             </if>

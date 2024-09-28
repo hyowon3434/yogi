@@ -22,4 +22,5 @@ public class AccommodationVO {
     private String hotelImage3;
     private String hotelImage4;
     private String hotelImage5;
+    private String hotelHost;
 }

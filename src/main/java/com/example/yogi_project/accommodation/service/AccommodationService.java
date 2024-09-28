@@ -22,6 +22,7 @@ public class AccommodationService {
 
     public void newAccommodation(AccommodationVO param, MultipartFile file) throws Exception{
         String path = saveFile(file);
+
         param.setImageTitle(file.getOriginalFilename());
         param.setStandardCapacity(1);
         accommodationDao.newAccommodation(param);
