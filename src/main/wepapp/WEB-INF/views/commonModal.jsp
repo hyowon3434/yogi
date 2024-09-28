@@ -70,6 +70,9 @@
                 <label for="type">숙소 타입:</label>
                 <input type="text" id="type" name="type" required><br><br>
 
+                <label for="location">숙소 가격</label>
+                <input type="text" id="price" name="price" required><br><br>
+
                 <label for="description">숙소 설명:</label>
                 <textarea id="description" name="description" rows="4" required></textarea><br><br>
 
