@@ -34,20 +34,6 @@
                         <button type="submit" id="search-submit">검색</button>
                     </form>
                 </div>
-
-                <div class="section-box2">
-                    <form action="/stay" enctype="multipart/form-data" method="post">
-                        <input type="text" id="name" name="name" placeholder="숙소명"><br>
-                        <input type="text" id="address" name="address" placeholder="주소"><br>
-                        <input type="text" id="type" name="type" placeholder="숙소타입"><br>
-                        <input type="text" id="price" name="price" placeholder="가격"><br>
-                        <input type="file" name="file"><br>
-                        <textarea id="description" name="description" placeholder="설명"></textarea>
-                        <button type="submit">등록</button>
-                    </form>
-
-<%--                    <a href="${accommodations.imagePath}"></a>--%>
-                </div>
             </div>
         </div>
         <div class="main-content">
@@ -55,7 +41,7 @@
             <div class="reserve-list-area">
                 <c:forEach var="accommodation" items="${accommodations}">
                     <div class="com">
-                        <div class="com-img-area" style="background-image: url('${accommodation.imagePath}'); "></div>
+                        <div class="com-img-area" style="background-image: url('${accommodation.imageTitle}'); " ></div>
                         <p>${accommodation.type}</p>
                         <p>${accommodation.name}</p>
                         <p>${accommodation.address}</p>
@@ -71,6 +57,14 @@
                 <button>5</button>
             </div>
         </div>
+        <div id="result"></div>
     </main>
+
+
+
+
+
+
+
 </body>
 </html>

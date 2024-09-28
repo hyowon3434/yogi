@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,34 +23,35 @@
     <main>
         <div class="main-header">
             <div class="img-area-box">
-                <div class="section-first">1</div>
+                <div class="section-first" style = "background-image:url('${roomReservations[0].imageTitle}');"></div>
                 <div class="section-second">
                     <div class="top">
-                        <div class="com"></div>
-                        <div class="com"></div>
+                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage2}');"></div>
+                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage3}');"></div>
                     </div>
                     <div class="bottom">
-                        <div class="com"></div>
-                        <div class="com"></div>
+                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage4}');"></div>
+                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage5}');"></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="main-content">
-            <p>${accommodations[0].type}</p>
-            <p>${accommodations[0].name}</p>
+            <p>${roomReservations[0].type}</p>
+            <p>${roomReservations[0].name}</p>
             <p>리뷰보기</p>
             <div class="main-content-wrap">
             <div class="review-box-area">
-                <c:forEach var="reviews" items="${reviews}">
-                    <div class="box">
-                        <p>
-                            ${reviews.reviewContent}
-                        </p>
-                    </div>
-                </c:forEach>
+                <div class="box">
+                    <p>구월 호텔반월을 처음 이용하게 되었어요.
+                        호텔반월을 이용하면서 깜짝 놀랄일들이 많아서 리뷰를 작성하게 되었네요~^^</p></div>
+                <div class="box"><p>조식을 먹으려고 오는건지?
+                    숙박을 하려고 오는건지? 이젠 솔직히 나도 헷갈릴때가 있는 호텔 입니다.</p></div>
+                <div class="box"><p>집에서 도보로 30분 거리에 있는 호텔반월~
+                    호텔반월은 구월아시아드에 있습니다</p></div>
             </div>
+
             <div class="room-wrap">
              <!-- 반복부분 -->
             <p style="font-size: large; font-weight: 800; margin:15px 0 15px 0;color: black">객실 선택</p>
@@ -72,7 +72,7 @@
                                 <p>입실 14:00</p>
                                 <p>퇴실 14:00</p>
                                 <div class="sub-price">
-                                    <p><fmt:formatNumber value="${accommodations[0].price}" pattern="#,###"/></p>
+                                    <p>40,500원</p>
                                     <button>숙박 예약</button>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                             <p>입실 14:00</p>
                             <p>퇴실 14:00</p>
                             <div class="sub-price">
-                                <p><fmt:formatNumber value="${accommodations[0].price}" pattern="#,###"/></p>
+                                <p>40,500원</p>
                                 <button>숙박 예약</button>
                             </div>
                         </div>
