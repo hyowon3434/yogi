@@ -19,7 +19,8 @@ public class ReviewController {
 
     @Autowired
     private ReviewService reviewService;
-
+  
+    // 해당 숙소의 리뷰 조회(query-string 숙소고유번호값(accommodationId))
     @GetMapping("/review")
     public String getReviews(Model model, ReviewVO param){
         List<ReviewVO> reviews = reviewService.getReviews(param);

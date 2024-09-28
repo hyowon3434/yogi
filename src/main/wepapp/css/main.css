@@ -117,9 +117,8 @@ main .section-box{
 }
 main .section-box p{
     border-bottom: 1px solid rgba(204, 204, 216, 0.3); /* 반투명 파란색 */
-    font-size: 12x;
+    font-size: 12px;
     font-weight: 600;
-
     color:rgb(94, 126, 126);
     height:30%;
     line-height:50px;
@@ -143,6 +142,7 @@ main .section-box p{
     border: 1px solid white;
     border-radius: 6px;
     background-color: #F5F5F5;
+    padding: 10px;
 }
 #date-area{
     width:23%;
@@ -150,6 +150,8 @@ main .section-box p{
     border: 1px solid white;
     border-radius: 6px;
     background-color: #F5F5F5;
+    font-size: 20px;
+    padding: 10px;
 }
 #pr-num-area{
     width:26%;
@@ -157,6 +159,9 @@ main .section-box p{
     border: 1px solid white;
     border-radius: 6px;
     background-color: #F5F5F5;
+    font-size: 20px;
+    padding: 10px;
+    align-items: center;
 }
 #search-submit{
     width:120px;

@@ -10,12 +10,13 @@ import org.apache.ibatis.type.Alias;
 @Alias("AccommodationVO")
 @NoArgsConstructor
 public class AccommodationVO {
-    private String accommodationId;
+    private Integer accommodationId;
     private String name;
     private String address;
     private String description;
     private String type;
     private Integer price;
     private String imageTitle;
-    private String standardCapacity;
+    private String imagePath;
+    private Integer standardCapacity;
 }

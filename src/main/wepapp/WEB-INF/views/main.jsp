@@ -26,10 +26,13 @@
             <div class="section-box">
                 <p>숙소 검색</p>
                 <div class="section-content">
-                    <input type="text" id="search-text-area">
-                    <input type="text" id="date-area">
-                    <input type="text" id="pr-num-area">
-                    <button type="submit" id="search-submit">검색</button>
+                    <form action="/stay/search" method="GET">
+                        <input type="text" id="search-text-area" name="name">
+                        <input type="text" id="date-area" name="type">
+                        <input type="text" id="pr-num-area">
+                        <button type="submit" id="search-submit">검색</button>
+                    </form>
+
                 </div>
             </div>
         </div>

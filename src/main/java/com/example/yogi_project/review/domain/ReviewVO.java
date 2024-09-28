@@ -10,7 +10,7 @@ import org.apache.ibatis.type.Alias;
 @NoArgsConstructor
 @Alias("ReviewVO")
 public class ReviewVO {
-    private String reviewId;
+    private Integer reviewId;
     private String accommodationId;
     private String reviewUserId;
     private String reviewContent;
