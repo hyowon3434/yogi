@@ -61,4 +61,5 @@ public class AccommodationController {
         accommodationService.delAccommodation(param);
         return null;
     }
+
 }
