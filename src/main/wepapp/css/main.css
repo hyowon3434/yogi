@@ -138,26 +138,13 @@ main .section-box p{
 }
 
 #search-text-area{
-    width:30%;
+    width:350px;
     height:48px;
     border: 1px solid white;
     border-radius: 6px;
     background-color: #F5F5F5;
 }
-#date-area{
-    width:23%;
-    height:48px;
-    border: 1px solid white;
-    border-radius: 6px;
-    background-color: #F5F5F5;
-}
-#pr-num-area{
-    width:26%;
-    height:48px;
-    border: 1px solid white;
-    border-radius: 6px;
-    background-color: #F5F5F5;
-}
+
 #search-submit{
     width:120px;
     height:48px;
