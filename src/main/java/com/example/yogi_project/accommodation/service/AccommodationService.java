@@ -20,17 +20,30 @@ public class AccommodationService {
         return accommodationDao.getAccommodations(param);
     }
 
-    public void newAccommodation(AccommodationVO param, MultipartFile file) throws Exception{
-        String path = saveFile(file);
-
-        param.setImageTitle(file.getOriginalFilename());
+    public void newAccommodation(AccommodationVO param,
+                                 MultipartFile imageTitle,
+                                 List<MultipartFile> hotelImages) throws Exception{
+        saveFile(imageTitle, hotelImages);
+        param.setImageTitle(imageTitle.getOriginalFilename());
+        param.setHotelImage2(hotelImages.get(0).getOriginalFilename());
+        param.setHotelImage3(hotelImages.get(1).getOriginalFilename());
+        param.setHotelImage4(hotelImages.get(2).getOriginalFilename());
+        param.setHotelImage5(hotelImages.get(3).getOriginalFilename());
+        param.setHotelHost("홍길동");
         param.setStandardCapacity(1);
         accommodationDao.newAccommodation(param);
     }
 
-    public void putAccommodation(AccommodationVO param, MultipartFile file) throws Exception{
-        String path = saveFile(file);
-        param.setImageTitle(file.getOriginalFilename().toString());
+    public void putAccommodation(AccommodationVO param,
+                                 MultipartFile imageTitle,
+                                 List<MultipartFile> hotelImages) throws Exception{
+        saveFile(imageTitle, hotelImages);
+        param.setImageTitle(imageTitle.getOriginalFilename());
+        param.setHotelImage2(hotelImages.get(0).getOriginalFilename());
+        param.setHotelImage3(hotelImages.get(1).getOriginalFilename());
+        param.setHotelImage4(hotelImages.get(2).getOriginalFilename());
+        param.setHotelImage5(hotelImages.get(3).getOriginalFilename());
+        param.setHotelHost("홍길동");
         param.setStandardCapacity(1);
         accommodationDao.putAccommodation(param);
 
@@ -40,21 +53,31 @@ public class AccommodationService {
         accommodationDao.delAccommodation(param);
     }
 
-    private String saveFile(MultipartFile file) throws Exception {
-        if (file.getOriginalFilename() == null) throw new Exception("파일이 첨부되지 않았습니다");
-        String projectPath = "";
+    private void saveFile(MultipartFile file,
+                          List<MultipartFile> files) throws Exception {
+        if (file.getOriginalFilename() == null || files.size() == 0) throw new Exception("파일이 첨부되지 않았습니다");
+
+        String projectPath = "/Users/jayden/Downloads/yogi_project/src/main/resources/static";
         try{
             UUID uuid = UUID.randomUUID();
             String fileName = uuid + "_" + file.getOriginalFilename();
-            projectPath = "/Users/jayden/Downloads/yogi_project/src/main/resources/static" + fileName;
+            projectPath += fileName;
 
             File saveFile = new File(projectPath, fileName);
             file.transferTo(saveFile);
+
+
+            for (MultipartFile image : files) {
+                UUID hotelUuid = UUID.randomUUID();
+                String imgFileName = hotelUuid + "_" + image.getOriginalFilename();
+                projectPath += imgFileName;
+
+                File saveImg = new File(projectPath, fileName);
+                file.transferTo(saveImg);
+            }
+
         } catch (Exception e){
             e.printStackTrace();
         }
-
-
-        return projectPath;
     }
 }

@@ -1,7 +1,6 @@
 package com.example.yogi_project.reservationInfo.controller;
 
-import com.example.yogi_project.reservation.domain.ReservationVO;
-import com.example.yogi_project.reservationInfo.dao.RoomReservationInfoDao;
+
 import com.example.yogi_project.reservationInfo.domain.RoomReservationInfoVO;
 import com.example.yogi_project.reservationInfo.service.RoomReservationInfoService;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 

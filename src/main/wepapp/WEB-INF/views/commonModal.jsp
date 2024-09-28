@@ -60,17 +60,17 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>숙소 등록하기</h2>
-            <form id="registerForm" enctype="multipart/form-data" action="${pageContext.request.contextPath}/숙소등록" method="POST">
+            <form id="registerForm" enctype="multipart/form-data" action="${pageContext.request.contextPath}/stay/new" method="POST">
                 <label for="name">숙소 이름:</label>
                 <input type="text" id="name" name="name" required><br><br>
 
-                <label for="location">숙소 위치:</label>
-                <input type="text" id="location" name="location" required><br><br>
+                <label for="address">숙소 위치:</label>
+                <input type="text" id="address" name="address" required><br><br>
 
                 <label for="type">숙소 타입:</label>
                 <input type="text" id="type" name="type" required><br><br>
 
-                <label for="location">숙소 가격</label>
+                <label for="price">숙소 가격</label>
                 <input type="text" id="price" name="price" required><br><br>
 
                 <label for="description">숙소 설명:</label>
@@ -79,8 +79,8 @@
                 <label for="mainImage">메인 페이지 이미지 업로드:</label>
                 <input type="file" id="mainImage" name="mainImage" accept="image/*" required><br><br>
 
-                <label for="subImages">서브 페이지 이미지 업로드 (1~4개):</label>
-                <input type="file" id="subImages" name="subImages" accept="image/*" multiple required><br><br>
+                <label for="hotelImages">서브 페이지 이미지 업로드 (1~4개):</label>
+                <input type="file" id="hotelImages" name="hotelImages" accept="image/*" multiple required><br><br>
 
                 <button type="submit">등록</button>
             </form>

@@ -44,16 +44,25 @@ public class AccommodationController {
         return "main";
     }
 
-    @PostMapping
-    public String newAccmmodation(AccommodationVO param, MultipartFile file) throws Exception{
+    @GetMapping("/new")
+    public String commonModal(){
+        return "commonModal";
+    }
+
+    @PostMapping("/new")
+    public String newAccmmodation(AccommodationVO param,
+                                  @RequestParam("mainImage") MultipartFile mainImage,
+                                  @RequestParam("hotelImages") List<MultipartFile> hotelImages) throws Exception{
         log.warn(param.getAddress());
-        accommodationService.newAccommodation(param, file);
+        accommodationService.newAccommodation(param, mainImage, hotelImages);
         return "main";
     }
 
     @PutMapping
-    public String putAccmmodation(@RequestBody AccommodationVO param, MultipartFile file) throws Exception{
-        accommodationService.putAccommodation(param, file);
+    public String putAccmmodation(AccommodationVO param,
+                                  @RequestParam("imageTitle") MultipartFile imageTitle,
+                                  @RequestParam("hotelImages") List<MultipartFile> hotelImages) throws Exception{
+        accommodationService.putAccommodation(param, imageTitle, hotelImages);
         return "main";
     }
 
