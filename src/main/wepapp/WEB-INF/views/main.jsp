@@ -27,19 +27,18 @@
             </div>
             <div class="section-box">
                 <p>숙소 검색</p>
-                <div class="section-content">
-                    <input type="text" id = "search-text-area">
-                    <input type="text" id = "date-area">
-                    <input type="text" id = "pr-num-area">
-                    <button type="submit" id = "search-submit">검색</button>
-                </div>
+            <form class="section-content" id="search-form" action="http://localhost:8080/stay/search" method="GET">
+                <input type="text" id="search-text-area" placeholder="검색어를 입력하세요" name="query">
+                <button type="submit" id="search-submit">검색</button>
+            </form>
+
             </div>
         </div>
         <div class="main-content">
             <p class="list-name">숙소 리스트</p>
 
             <div class="reserve-list-area">
-                <c:forEach var="accommodation" items="${accommodations}">
+                <c:forEach var="accommodation" items="${postByPageNumber.getContent()}">
                     <div class="com">
                         <div class="com-img-area" style = "background-image:url('${accommodation.imageTitle}');">
 
@@ -55,11 +54,11 @@
 
             <div class="com-area-paging">
 
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
-                <button>5</button>
+
+               <c:forEach var="i" begin="1" end="${postByPageNumber.totalPages}">
+                   <button onclick="location.href='?page=${i - 1}'">${i}</button>
+               </c:forEach>
+
 
             </div>
         </div>
