@@ -41,7 +41,9 @@
             <div class="reserve-list-area">
                 <c:forEach var="accommodation" items="${accommodations}">
                     <div class="com">
-                        <div class="com-img-area" style="background-image: url('${accommodation.imageTitle}'); " ></div>
+                        <div class="com-img-area">
+                            <img src="0fc002989db31d62da1a4add6f56c8fa.jpg" style="max-width: 100%;height: auto; border-radius: 12px">
+                        </div>
                         <p>${accommodation.type}</p>
                         <p>${accommodation.name}</p>
                         <p>${accommodation.address}</p>

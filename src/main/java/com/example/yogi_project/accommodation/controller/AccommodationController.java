@@ -29,7 +29,9 @@ public class AccommodationController {
     public String getAccmmodations(Model model, AccommodationVO param){
         List<AccommodationVO> accommodations = accommodationService.getAccommodations(param);
         model.addAttribute("accommodations", accommodations);
-        log.info(accommodations.get(0).getImageTitle());
+        for (int i = 0; i < accommodations.size(); i++) {
+            log.info(accommodations.get(i).getImageTitle());
+        }
         return "main";
     }
 

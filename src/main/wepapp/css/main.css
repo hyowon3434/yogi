@@ -194,14 +194,12 @@ main .section-box p{
     min-width: 185px;
 }
 .com-img-area{
-    background-image: url("https://image.goodchoice.kr/resize_564x338/adimg_new/46156/7014/32ac436e31398e5cc182d7d5fdea0572.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height:54%;
     width:100%;
     border-radius: 12px;
-
 }
 .reserve-list-area .com p:nth-child(2){
     font-size: 11px;

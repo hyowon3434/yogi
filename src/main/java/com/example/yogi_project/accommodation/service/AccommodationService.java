@@ -43,13 +43,18 @@ public class AccommodationService {
 
     private String saveFile(MultipartFile file) throws Exception {
         if (file.getOriginalFilename() == null) throw new Exception("파일이 첨부되지 않았습니다");
+        String projectPath = "";
+        try{
+            UUID uuid = UUID.randomUUID();
+            String fileName = uuid + "_" + file.getOriginalFilename();
+            projectPath = "/Users/jayden/Downloads/yogi_project/src/main/resources/static" + fileName;
 
-        UUID uuid = UUID.randomUUID();
-        String fileName = uuid + "_" + file.getOriginalFilename();
-        String projectPath = "/Users/jayden/Downloads/yogi_project/src/main/resources/static" + fileName;
+            File saveFile = new File(projectPath, fileName);
+            file.transferTo(saveFile);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
-        File saveFile = new File(projectPath, fileName);
-        file.transferTo(saveFile);
 
         return projectPath;
     }
