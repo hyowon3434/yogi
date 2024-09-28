@@ -14,7 +14,7 @@ public interface AccommodationDao {
     void                    newAccommodation(AccommodationVO param);
     void                    putAccommodation(AccommodationVO param);
     void                    delAccommodation(AccommodationVO param);
-    List<AccommodationVO> getAccommodationPaging(@Param("pageSize") int pageSize, @Param("offset") Long offset,AccommodationVO param);
+    List<AccommodationVO> getAccommodationPaging(@Param("pageSize") int pageSize, @Param("offset") Long offset);
     Integer getAccommodationsTotalCnt();
 
 }

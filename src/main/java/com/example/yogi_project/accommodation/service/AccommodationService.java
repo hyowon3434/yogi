@@ -62,8 +62,8 @@ public class AccommodationService {
 
         return projectPath;
     }
-    public Page<AccommodationVO> getAccommodationPaging(Pageable pageable,AccommodationVO param){
-        List<AccommodationVO> postByPageNumber = accommodationDao.getAccommodationPaging(pageable.getPageSize(),pageable.getOffset(),param);
+    public Page<AccommodationVO> getAccommodationPaging(Pageable pageable){
+        List<AccommodationVO> postByPageNumber = accommodationDao.getAccommodationPaging(pageable.getPageSize(),pageable.getOffset());
 
         Integer totalPost = accommodationDao.getAccommodationsTotalCnt();
 

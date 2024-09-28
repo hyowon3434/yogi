@@ -36,7 +36,7 @@ public class AccommodationController {
     //숙소 전체 조회 페이징 처리
     @GetMapping
     public String getExPaging(@PageableDefault(size=12) Pageable pageable,Model model,AccommodationVO param){
-        Page<AccommodationVO> postByPageNumber = accommodationService.getAccommodationPaging(pageable,param);
+        Page<AccommodationVO> postByPageNumber = accommodationService.getAccommodationPaging(pageable);
 
         log.info("posts : {}", postByPageNumber.getContent().get(0).getAccommodationId());
         log.info("prev: {}", pageable.previousOrFirst().getPageNumber() + 1);
