@@ -22,7 +22,7 @@ public class AccommodationService {
 
     public void newAccommodation(AccommodationVO param, MultipartFile file) throws Exception{
         String path = saveFile(file);
-        param.setImagePath(path);
+
         param.setImageTitle(file.getOriginalFilename());
         param.setStandardCapacity(1);
         accommodationDao.newAccommodation(param);
@@ -30,7 +30,6 @@ public class AccommodationService {
 
     public void putAccommodation(AccommodationVO param, MultipartFile file) throws Exception{
         String path = saveFile(file);
-        param.setImagePath(path);
         param.setImageTitle(file.getOriginalFilename().toString());
         param.setStandardCapacity(1);
         accommodationDao.putAccommodation(param);

@@ -28,9 +28,6 @@
             <if test="imageTitle != null and imageTitle != '' ">
                 AND imageTitle = #{imageTitle}
             </if>
-            <if test="imagePath != null and imagePath != '' ">
-                AND imagePath = #{imagePath}
-            </if>
             <if test="standardCapacity != null and standardCapacity != '' ">
                 AND standardCapacity = #{standardCapacity}
             </if>
@@ -45,8 +42,12 @@
          type,
          price,
          imageTitle,
-         imagePath,
-         standardCapacity
+         standardCapacity,
+         hotelImage2,
+         hotelImage3,
+         hotelImage4,
+         hotelImage5,
+         hotelHost
         ) VALUES
         (
          #{name},
@@ -55,8 +56,12 @@
          #{type},
          #{price},
          #{imageTitle},
-         #{imagePath},
-         #{standardCapacity}
+         #{standardCapacity},
+         #{hotelImage2},
+         #{hotelImage3},
+         #{hotelImage4},
+         #{hotelImage5},
+         #{hotelHost}
         )
     </insert>
     <update id="putAccommodation" parameterType="AccommodationVO">
@@ -68,8 +73,12 @@
             type = #{type},
             price = #{price},
             imageTitle = #{imageTitle},
-            imagePath = #{imagePath},
-            standardCapacity = #{standardCapacity}
+            standardCapacity = #{standardCapacity},
+            hotelImage2 = #{hotelImage2},
+            hotelImage3 = #{hotelImage3},
+            hotelImage4 = #{hotelImage4},
+            hotelImage5 = #{hotelImage5},
+            hotelHost = #{hotelHost}
         WHERE
             1=1
             <if test="accommodationId != null and accommodationId != ''">
