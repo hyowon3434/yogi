@@ -17,6 +17,9 @@ public class AccommodationVO {
     private String type;
     private Integer price;
     private String imageTitle;
-    private String imagePath;
     private Integer standardCapacity;
+    private String hotelImage2;
+    private String hotelImage3;
+    private String hotelImage4;
+    private String hotelImage5;
 }
