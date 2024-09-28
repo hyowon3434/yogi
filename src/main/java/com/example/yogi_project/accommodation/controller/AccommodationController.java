@@ -3,6 +3,7 @@ package com.example.yogi_project.accommodation.controller;
 import com.example.yogi_project.accommodation.dao.AccommodationDao;
 import com.example.yogi_project.accommodation.domain.AccommodationVO;
 import com.example.yogi_project.accommodation.service.AccommodationService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,11 @@ public class AccommodationController {
     public String delAccmmodation(@RequestBody AccommodationVO param){
         accommodationService.delAccommodation(param);
         return null;
+    }
+
+    @GetMapping("/modal")
+    public String getModal(){
+        return "commonModal";
     }
 
 }
