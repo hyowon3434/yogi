@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -43,15 +44,16 @@ public class AccommodationController {
     }
 
     @PostMapping
-    public String newAccmmodation(@RequestBody AccommodationVO param){
-        accommodationService.newAccommodation(param);
-        return null;
+    public String newAccmmodation(AccommodationVO param, MultipartFile file) throws Exception{
+        log.warn(param.getAddress());
+        accommodationService.newAccommodation(param, file);
+        return "main";
     }
 
     @PutMapping
-    public String putAccmmodation(@RequestBody AccommodationVO param){
-        accommodationService.putAccommodation(param);
-        return null;
+    public String putAccmmodation(@RequestBody AccommodationVO param, MultipartFile file) throws Exception{
+        accommodationService.putAccommodation(param, file);
+        return "main";
     }
 
     @DeleteMapping

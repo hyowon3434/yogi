@@ -17,5 +17,6 @@ public class AccommodationVO {
     private String type;
     private Integer price;
     private String imageTitle;
-    private String standardCapacity;
+    private String imagePath;
+    private Integer standardCapacity;
 }

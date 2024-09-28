@@ -28,6 +28,9 @@
             <if test="imageTitle != null and imageTitle != '' ">
                 AND imageTitle = #{imageTitle}
             </if>
+            <if test="imagePath != null and imagePath != '' ">
+                AND imagePath = #{imagePath}
+            </if>
             <if test="standardCapacity != null and standardCapacity != '' ">
                 AND standardCapacity = #{standardCapacity}
             </if>
@@ -42,6 +45,7 @@
          type,
          price,
          imageTitle,
+         imagePath,
          standardCapacity
         ) VALUES
         (
@@ -50,7 +54,8 @@
          #{description},
          #{type},
          #{price},
-         #{imageTitle}
+         #{imageTitle},
+         #{imagePath},
          #{standardCapacity}
         )
     </insert>
@@ -63,6 +68,7 @@
             type = #{type},
             price = #{price},
             imageTitle = #{imageTitle},
+            imagePath = #{imagePath},
             standardCapacity = #{standardCapacity}
         WHERE
             1=1
