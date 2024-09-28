@@ -45,4 +45,9 @@ public class ReservationController {
         reservationService.delReservation(param);
         return null;
     }
+
+    @GetMapping("/reservationModal")
+    public String getReservation(){
+        return "reservation-modal";
+    }
 }

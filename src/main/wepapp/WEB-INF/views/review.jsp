@@ -23,16 +23,26 @@
     <main>
         <div class="main-header">
             <div class="img-area-box">
-                <div class="section-first" style = "background-image:url('${roomReservations[0].imageTitle}');"></div>
+            <div class="section-first" >
+              <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+            </div>
                 <div class="section-second">
                     <div class="top">
-                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage2}');"></div>
-                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage3}');"></div>
+                        <div class="com" >
+                           <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                        </div>
+                        <div class="com" >
+                            <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                        </div>
                     </div>
                     <div class="bottom">
-                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage4}');"></div>
-                        <div class="com" style = "background-image:url('${roomReservations[0].hotelImage5}');"></div>
-                    </div>
+                        <div class="com" >
+                            <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                        </div>
+                        <div class="com" >
+                            <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                        </div>
+                     </div>
                 </div>
             </div>
         </div>

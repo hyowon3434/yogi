@@ -70,4 +70,9 @@ public class AccommodationController {
         return "commonModal";
     }
 
+    @GetMapping("/room-modal")
+    public String getRoomModal(){
+        return "roomModal";
+    }
+
 }

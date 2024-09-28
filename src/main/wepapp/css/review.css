@@ -3,7 +3,10 @@
     padding: 0;
     border-collapse: separate;
 }
-
+img{
+width:500px;
+height:500px;
+}
 body{
     width:100%;
     height:150vh;
@@ -92,9 +95,14 @@ main .main-header{
 .section-first{
     width:50%;
     height:100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.section-first img{
+    width:100%;
+    height:100%;
+    object-fit: cover;    /* 이미지를 비율에 맞게 조정 */
+
 }
 .section-second{
     width:50%;
@@ -108,17 +116,15 @@ main .main-header{
     display: flex;
     gap:10px;
 }
-
-.section-second .top .com,
+.section-second .top .com
 .section-second .bottom .com
 {
     width:100%;
     height:100%;
-    background-image: url("https://image.goodchoice.kr/resize_1280x1024/adimg_new/46156/468583/2e21c0044e46c056e472651911a535cf.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+
 }
+
+
 
 main .main-content{
     margin-top: 20px;

@@ -62,4 +62,8 @@ public class ReviewController {
         reviewService.delReview(param);
         return null;
     }
+    @GetMapping("/review-modal")
+    public String getReviewModal(){
+        return "reviewModal";
+    }
 }
