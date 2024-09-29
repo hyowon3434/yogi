@@ -28,18 +28,18 @@
             </div>
                 <div class="section-second">
                     <div class="top">
-                        <div class="com" >
+                        <div class="com" style="width:100%; height:100%">
                            <img src="${accommodations[0].hotelImage2}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
-                        <div class="com" >
+                        <div class="com" style="width:100%; height:100%">
                             <img src="${accommodations[0].hotelImage3}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
                     </div>
                     <div class="bottom">
-                        <div class="com" >
+                        <div class="com"style="width:100%; height:100%" >
                             <img src="${accommodations[0].hotelImage4}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
-                        <div class="com" >
+                        <div class="com"style="width:100%; height:100%" >
                             <img src="${accommodations[0].hotelImage5}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
                      </div>
@@ -62,7 +62,7 @@
 
             <div class = "room-wrap-header" style="display:flex; justify-content:space-between; align-items:center">
                 <p style="font-size: large; font-weight: 800; margin:15px 0 15px 0;color: black">객실 선택</p>
-                <a href="/review/new?accommodationId=${accommodations[0].accommodationId}" style="text-decoration:none; font-size: large; font-weight: 800; padding-right:50px">리뷰 등록</a>
+                <a href="/review/new?accommodationId=${accommodations[0].accommodationId}" style="text-decoration:none; font-size: large; font-weight: 800; padding-right:80px">리뷰 등록</a>
             </div>
 
             <div class="room-wrap" style = "margin-bottom:20px;">
