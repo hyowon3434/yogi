@@ -62,16 +62,10 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>숙소 등록하기</h2>
-            <form id="registerForm" enctype="multipart/form-data" action="${pageContext.request.contextPath}/숙소등록" method="POST">
-
-                <label for="type">리뷰 제목</label>
-                <input type="text" id="type" name="type" required><br><br>
-
-                <label for="description">리뷰 상세</label>
-                <textarea id="description" name="description" rows="4" required></textarea><br><br>
-
-                <label for="subImages">리뷰 사진 업로드</label>
-                <input type="file" id="subImages" name="subImages" accept="image/*" multiple required><br><br>
+            <form id="registerForm" action="/review/new" method="POST">
+                <input type="text" id="accommodationId" name="accommodationId" value="${accommodationId}" style="display: none">
+                <label for="reviewContent">리뷰 상세</label>
+                <textarea id="reviewContent" name="reviewContent" rows="4" required></textarea><br><br>
 
                 <button type="submit">등록</button>
             </form>
@@ -100,6 +94,7 @@
                 modal.style.display = "none";
             }
         };
+
     </script>
 </body>
 </html>

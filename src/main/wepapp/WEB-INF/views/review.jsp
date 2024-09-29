@@ -80,7 +80,7 @@
                                 <p>입실 14:00</p>
                                 <p>퇴실 14:00</p>
                                 <div class="sub-price">
-                                    <p>${acco}</p>
+                                    <p>${accommodations[0].price + 30000}원</p>
                                     <button>숙박 예약</button>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                             <p>입실 14:00</p>
                             <p>퇴실 14:00</p>
                             <div class="sub-price">
-                                <p>40,500원</p>
+                                <p>${accommodations[0].price}원</p>
                                 <button>숙박 예약</button>
                             </div>
                         </div>
@@ -138,6 +138,7 @@
     </c:forEach>
 
     </div>
+        <a href="/review/new?accommodationId=${accommodations[0].accommodationId}">리뷰 등록</a>
     </main>
 </body>
 </html>
