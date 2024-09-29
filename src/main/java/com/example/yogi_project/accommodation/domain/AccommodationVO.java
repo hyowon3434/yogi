@@ -3,11 +3,13 @@ package com.example.yogi_project.accommodation.domain;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.apache.ibatis.type.Alias;
 
 @Getter
 @Setter
 @Alias("AccommodationVO")
+@ToString
 @NoArgsConstructor
 public class AccommodationVO {
     private Integer accommodationId;
