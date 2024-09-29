@@ -89,7 +89,7 @@ public class AccommodationController {
                                   @RequestParam("hotelImages") List<MultipartFile> hotelImages) throws Exception{
         log.warn(param.getAddress());
         accommodationService.newAccommodation(param, mainImage, hotelImages);
-        return "main";
+        return "redirect:/stay";
     }
 
     @PutMapping
