@@ -35,7 +35,7 @@ public class AccommodationController {
     private AccommodationService accommodationService;
     //숙소 전체 조회 페이징 처리
     @GetMapping
-    public String getExPaging(@PageableDefault(size=12) Pageable pageable,Model model,AccommodationVO param){
+    public String getExPaging(@PageableDefault(size=12) Pageable pageable,Model model){
         Page<AccommodationVO> postByPageNumber = accommodationService.getAccommodationPaging(pageable);
 
         log.info("posts : {}", postByPageNumber.getContent().get(0).getAccommodationId());
@@ -63,11 +63,14 @@ public class AccommodationController {
 
     // 숙소 필터링 검색
     @GetMapping("/search")
-    public String getAccommodation(Model model, AccommodationVO param,@RequestParam("query") String query){
-        log.info("검색 데이터: {}", query);
+    public String getAccommodation(Model model,
+                                   AccommodationVO param,
+                                   @PageableDefault(size = 12) Pageable pageable){
+
         List<AccommodationVO> filteredAccommodation = accommodationService.getAccommodations(param);
+        accommodationService.getAccommodationPaging(pageable);
         model.addAttribute("accommodations", filteredAccommodation);
-        log.warn(filteredAccommodation.get(0).getDescription());
+        log.warn(filteredAccommodation.toString());
 
         return "main";
     }

@@ -27,8 +27,8 @@
             </div>
             <div class="section-box">
                 <p>숙소 검색</p>
-            <form class="section-content" id="search-form" action="http://localhost:8080/stay/search" method="GET">
-                <input type="text" id="search-text-area" placeholder="검색어를 입력하세요" name="query">
+            <form class="section-content" id="search-form" action="/stay/search" method="GET">
+                <input type="text" id="search-text-area" placeholder="검색어를 입력하세요" name="name">
                 <button type="submit" id="search-submit">검색</button>
             </form>
 
@@ -39,15 +39,17 @@
 
             <div class="reserve-list-area">
                 <c:forEach var="accommodation" items="${postByPageNumber.getContent()}">
-                    <div class="com">
-                        <div class="com-img-area" style = "background-image:url('${accommodation.imageTitle}');">
+                    <a href="/review?accommodationId=${accommodation.accommodationId}">
+                        <div class="com">
+                            <div class="com-img-area" style = "background-image:url('${accommodation.imageTitle}');">
 
+                            </div>
+                            <p>${accommodation.type}</p>
+                            <p>${accommodation.name}</p>
+                            <p>${accommodation.address}</p>
+                            <p><fmt:formatNumber value="${accommodation.price}" pattern="#,###"/>원</p>
                         </div>
-                        <p>${accommodation.type}</p>
-                        <p>${accommodation.name}</p>
-                        <p>${accommodation.address}</p>
-                        <p><fmt:formatNumber value="${accommodation.price}" pattern="#,###"/>원</p>
-                    </div>
+                    </a>
                  </c:forEach>
 
                 </div>
@@ -61,6 +63,7 @@
 
 
             </div>
+            <a href="/stay/new">숙소 등록</a>
         </div>
 
     </main>
