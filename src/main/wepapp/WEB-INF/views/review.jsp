@@ -76,7 +76,7 @@
                             <p>대실</p>
                             <p>무한대실</p>
                             <p>10시간 이용</p>
-                            <button>숙박 예약</button>
+                            <a class="resv-a" href="/reservation/new?accommodationId=${accommodations[0].accommodationId}"><button>숙박 예약</button></a>
                             <div class="line"></div>
 
                             <div class="sub-box-second">
@@ -84,8 +84,8 @@
                                 <p>입실 14:00</p>
                                 <p>퇴실 14:00</p>
                                 <div class="sub-price">
-                                    <p>${accommodations[0].price + 30000}원</p>
-                                    <button>숙박 예약</button>
+                                    <p><fmt:formatNumber pattern="#,###">${accommodations[0].price + 35000}</fmt:formatNumber>원</p>
+                                    <a class="resv-a" href="/reservation/new?accommodationId=${accommodations[0].accommodationId}"><button>숙박 예약</button></a>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                         <p>대실</p>
                         <p>무한대실</p>
                         <p>10시간 이용</p>
-                        <button>숙박 예약</button>
+                        <a class="resv-a" href="/reservation/new?accommodationId=${accommodations[0].accommodationId}"><button>숙박 예약</button></a>
                         <div class="line"></div>
 
                         <div class="sub-box-second">
@@ -110,8 +110,8 @@
                             <p>입실 14:00</p>
                             <p>퇴실 14:00</p>
                             <div class="sub-price">
-                                <p>${accommodations[0].price}원</p>
-                                <button>숙박 예약</button>
+                                <p><fmt:formatNumber pattern="#,###">${accommodations[0].price + 10000}</fmt:formatNumber>원</p>
+                                <a class="resv-a" href="/reservation/new?accommodationId=${accommodations[0].accommodationId}"><button>숙박 예약</button></a>
                             </div>
                         </div>
                     </div>

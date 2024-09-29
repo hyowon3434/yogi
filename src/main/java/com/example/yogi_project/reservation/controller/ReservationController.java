@@ -28,10 +28,11 @@ public class ReservationController {
         return null;
     }
 
-    @PostMapping
-    public String newReservation(@RequestBody ReservationVO param){
-        reservationService.newReservation(param);
-        return null;
+    @GetMapping("/new")
+    public String newReservation(@ModelAttribute ReservationVO param,
+                                 @RequestParam("accommodationId") Integer accommodationId){
+        reservationService.newReservation(param, accommodationId);
+        return "main";
     }
 
     @PutMapping
