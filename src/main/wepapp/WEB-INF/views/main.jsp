@@ -27,7 +27,7 @@
             </div>
             <div class="section-box">
                 <p>숙소 검색</p>
-            <form class="section-content" id="search-form" action="/stay/search" method="GET">
+            <form class="section-content" id="search-form" action="/stay" method="GET">
                 <input type="text" id="search-text-area" placeholder="검색어를 입력하세요" name="name">
                 <button type="submit" id="search-submit">검색</button>
             </form>
@@ -35,7 +35,10 @@
             </div>
         </div>
         <div class="main-content">
-            <p class="list-name">숙소 리스트</p>
+           <div class="main-content-header">
+                <p class="list-name">숙소 리스트</p>
+                <a href="/stay/new" class="list-name">숙소 등록</a>
+           </div>
 
             <div class="reserve-list-area">
                 <c:forEach var="accommodation" items="${postByPageNumber.getContent()}">
@@ -57,13 +60,15 @@
             <div class="com-area-paging">
 
 
-               <c:forEach var="i" begin="1" end="${postByPageNumber.totalPages}">
-                   <button onclick="location.href='?page=${i - 1}'">${i}</button>
-               </c:forEach>
+            <c:forEach var="i" begin="1" end="${postByPageNumber.totalPages}">
+                <form action="http://localhost:8080/stay" method="get" style="display: inline;">
+                    <input type="hidden" name="page" value="${i - 1}" />
+                    <button type="submit">${i}</button>
+                </form>
+            </c:forEach>
 
 
             </div>
-            <a href="/stay/new">숙소 등록</a>
         </div>
 
     </main>

@@ -60,9 +60,13 @@
                 </c:forEach>
             </div>
 
-            <div class="room-wrap">
-             <!-- 반복부분 -->
-            <p style="font-size: large; font-weight: 800; margin:15px 0 15px 0;color: black">객실 선택</p>
+            <div class = "room-wrap-header" style="display:flex; justify-content:space-between; align-items:center">
+                <p style="font-size: large; font-weight: 800; margin:15px 0 15px 0;color: black">객실 선택</p>
+                <a href="/review/new?accommodationId=${accommodations[0].accommodationId}" style="text-decoration:none; font-size: large; font-weight: 800;">리뷰 등록</a>
+            </div>
+
+            <div class="room-wrap" style = "margin-bottom:20px;">
+
                 <div class="room-box">
                     <div class="left-img-area" style="background-image: url('https://image.goodchoice.kr/resize_1742x480/adimg_new/895/541873/246ae0f5208ca1c368c927f2b017cea4.jpg');"></div>
                     <div class="content-box">
@@ -88,9 +92,7 @@
                     </div>
                 </div>
             </div>
-         <!-- 반복부분 -->
-  <!-- 반복부분 -->
-            <p style="font-size: large; font-weight: 800; margin:15px 0 15px 0; color: black;" >객실 선택</p>
+
             <div class="room-box">
                 <div class="left-img-area" style="background-image: url('https://image.goodchoice.kr/resize_1742x480/adimg_new/895/541873/246ae0f5208ca1c368c927f2b017cea4.jpg');"></div>
                 <div class="content-box">
@@ -116,7 +118,6 @@
                 </div>
             </div>
         </div>
-        <!-- 반복부분 -->
     </div>
 
 
@@ -138,7 +139,6 @@
     </c:forEach>
 
     </div>
-        <a href="/review/new?accommodationId=${accommodations[0].accommodationId}">리뷰 등록</a>
     </main>
 </body>
 </html>

@@ -85,10 +85,10 @@ public class AccommodationService {
             e.printStackTrace();
         }
     }
-    public Page<AccommodationVO> getAccommodationPaging(Pageable pageable){
-        List<AccommodationVO> postByPageNumber = accommodationDao.getAccommodationPaging(pageable.getPageSize(),pageable.getOffset());
+    public Page<AccommodationVO> getAccommodationPaging(Pageable pageable,String name){
+        List<AccommodationVO> postByPageNumber = accommodationDao.getAccommodationPaging(pageable.getPageSize(),pageable.getOffset(),name);
 
-        Integer totalPost = accommodationDao.getAccommodationsTotalCnt();
+        Integer totalPost = accommodationDao.getAccommodationsTotalCnt(name);
 
         return new PageImpl<>(postByPageNumber, pageable, totalPost);
     }
