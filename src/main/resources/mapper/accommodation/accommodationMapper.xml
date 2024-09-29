@@ -2,6 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.yogi_project.accommodation.dao.AccommodationDao">
+    <select id="getAccommodationsTotalCnt" resultType="java.lang.Integer">
+            SELECT COUNT(*) FROM accommodation;
+    </select>
+
+    <select id="getAccommodationPaging" resultType="AccommodationVO" >
+        SELECT *
+        FROM accommodation
+        ORDER BY accommodationId
+        LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+
+
     <select id="getAccommodations" parameterType="AccommodationVO" resultType="AccommodationVO">
         SELECT *
         FROM accommodation

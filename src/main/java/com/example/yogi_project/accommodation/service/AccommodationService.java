@@ -2,7 +2,12 @@ package com.example.yogi_project.accommodation.service;
 
 import com.example.yogi_project.accommodation.dao.AccommodationDao;
 import com.example.yogi_project.accommodation.domain.AccommodationVO;
+import com.example.yogi_project.example.domain.ExampleVO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -80,4 +85,12 @@ public class AccommodationService {
             e.printStackTrace();
         }
     }
+    public Page<AccommodationVO> getAccommodationPaging(Pageable pageable){
+        List<AccommodationVO> postByPageNumber = accommodationDao.getAccommodationPaging(pageable.getPageSize(),pageable.getOffset());
+
+        Integer totalPost = accommodationDao.getAccommodationsTotalCnt();
+
+        return new PageImpl<>(postByPageNumber, pageable, totalPost);
+    }
+
 }
