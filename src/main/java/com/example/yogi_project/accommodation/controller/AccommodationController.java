@@ -35,10 +35,12 @@ public class AccommodationController {
     private AccommodationService accommodationService;
     //숙소 전체 조회 페이징 처리
     @GetMapping
-    public String getExPaging(@PageableDefault(size=12) Pageable pageable,Model model){
-        Page<AccommodationVO> postByPageNumber = accommodationService.getAccommodationPaging(pageable);
-
-        log.info("posts : {}", postByPageNumber.getContent().get(0).getAccommodationId());
+    public String getExPaging(@PageableDefault(size = 12) Pageable pageable, Model model,
+                              @RequestParam(value = "name", required = false) String name) {
+        Page<AccommodationVO> postByPageNumber = accommodationService.getAccommodationPaging(pageable, name);
+        if (!postByPageNumber.getContent().isEmpty()) {
+            log.info("posts : {}", postByPageNumber.getContent().get(0).getAccommodationId());
+        }
         log.info("prev: {}", pageable.previousOrFirst().getPageNumber() + 1);
         log.info("next: {}", pageable.next().getPageNumber() + 1);
         log.info("hasPrev: {}", pageable.hasPrevious());
@@ -47,10 +49,11 @@ public class AccommodationController {
                 .boxed()
                 .collect(Collectors.toList()));
 
-        model.addAttribute("postByPageNumber",postByPageNumber);
+        model.addAttribute("postByPageNumber", postByPageNumber);
 
         return "main";
     }
+
 
     // 숙소 전체 조회
 //    @GetMapping
@@ -66,9 +69,9 @@ public class AccommodationController {
     public String getAccommodation(Model model,
                                    AccommodationVO param,
                                    @PageableDefault(size = 12) Pageable pageable){
-
+        String temp = "temp";
         List<AccommodationVO> filteredAccommodation = accommodationService.getAccommodations(param);
-        accommodationService.getAccommodationPaging(pageable);
+        accommodationService.getAccommodationPaging(pageable,temp);
         model.addAttribute("accommodations", filteredAccommodation);
         log.warn(filteredAccommodation.toString());
 

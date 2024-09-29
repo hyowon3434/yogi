@@ -174,7 +174,7 @@ main .main-content{
 
 .room-box{
     display: flex;
-    width:100%;
+    width:80%;
     height:500px;
     border: 1px solid white;
     background-color: rgb(253, 234, 234);
