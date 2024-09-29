@@ -24,23 +24,23 @@
         <div class="main-header">
             <div class="img-area-box">
             <div class="section-first" >
-              <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+              <img src="${accommodations[0].imageTitle}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
             </div>
                 <div class="section-second">
                     <div class="top">
                         <div class="com" >
-                           <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                           <img src="${accommodations[0].hotelImage2}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
                         <div class="com" >
-                            <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                            <img src="${accommodations[0].hotelImage3}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
                     </div>
                     <div class="bottom">
                         <div class="com" >
-                            <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                            <img src="${accommodations[0].hotelImage4}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
                         <div class="com" >
-                            <img src="https://image.goodchoice.kr/resize_1280x1024/exhibition/itemContents/8d7dc0827fad0a1a81c7b7fa7138b749.jpg " style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
+                            <img src="${accommodations[0].hotelImage5}" style = "width:100%; height:100%; object-fit:cover" alt="Room Image">
                         </div>
                      </div>
                 </div>
@@ -48,8 +48,8 @@
         </div>
 
         <div class="main-content">
-            <p>${roomReservations[0].type}</p>
-            <p>${roomReservations[0].name}</p>
+            <p>${accommodations[0].type}</p>
+            <p>${accommodations[0].name}</p>
             <p>리뷰보기</p>
             <div class="main-content-wrap">
             <div class="review-box-area">
@@ -80,7 +80,7 @@
                                 <p>입실 14:00</p>
                                 <p>퇴실 14:00</p>
                                 <div class="sub-price">
-                                    <p>40,500원</p>
+                                    <p>${acco}</p>
                                     <button>숙박 예약</button>
                                 </div>
                             </div>
@@ -120,36 +120,22 @@
     </div>
 
 
-    <div class="review-area">
-        <p>욱이깅</p>
-        <div class="right-review-area">
-            <p>★★★★★ 1개월전</p>
-            <div class="review-images">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-            </div>
-            <p>서울시강동구 길동에 위치한 간만에 좋은 업소에 온거 같습니다. 👍
-                주차장은 매우 넓고 편하게 입실하였습니다.침구는 보기드문 좋은재질의 고급이여서 너무 상쾌하였습니다 어메니티는 종류별로 잘 구비되어 있어서 편리하게 이용하였으며</p>
+    <c:forEach var="review" items="${reviews}">
+        <div class="review-area">
+            <p>욱이깅</p>
+            <div class="right-review-area">
+                <p>★★★★★ 1개월전</p>
+                <div class="review-images">
+                    <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
+                    <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
+                    <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
+                    <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
+                </div>
+                <p>${review.reviewContent}</p>
 
-        </div>
-
-    </div>
-    <div class="review-area">
-        <p>욱이깅</p>
-        <div class="right-review-area">
-            <p>★★★★★ 1개월전</p>
-            <div class="review-images">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
-                <img src="https://image.withstatic.com/217/157/89/672e737e2fe84e59bb45e8862021bd73_w420_h420.jpg?ext=webp" alt="">
             </div>
-            <p>서울시강동구 길동에 위치한 간만에 좋은 업소에 온거 같습니다. 👍
-                주차장은 매우 넓고 편하게 입실하였습니다.침구는 보기드문 좋은재질의 고급이여서 너무 상쾌하였습니다 어메니티는 종류별로 잘 구비되어 있어서 편리하게 이용하였으며</p>
         </div>
-    </div>
+    </c:forEach>
 
     </div>
     </main>

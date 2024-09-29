@@ -40,8 +40,6 @@ public class ReviewController {
         }
         model.addAttribute("reviews", reviews);
         model.addAttribute("accommodations", accommodations);
-
-        log.warn(accommodations.toString());
         return "review";
     }
 
