@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -43,10 +44,19 @@ public class ReviewController {
         return "review";
     }
 
-    @PostMapping
-    public String newReview(@RequestBody ReviewVO param){
+    @GetMapping("/new")
+    public String getReviewModal(@RequestParam("accommodationId") String accommodationId,
+                                 Model model){
+        model.addAttribute("accommodationId", accommodationId);
+        return "reviewModal";
+    }
+
+    @PostMapping("/new")
+    public String newReview(@ModelAttribute ReviewVO param,
+                            Model model){
+        param.setReviewUserId(2);
         reviewService.newReview(param);
-        return null;
+        return "main";
     }
 
     @PutMapping
@@ -60,8 +70,5 @@ public class ReviewController {
         reviewService.delReview(param);
         return null;
     }
-    @GetMapping("/review-modal")
-    public String getReviewModal(){
-        return "reviewModal";
-    }
+
 }
