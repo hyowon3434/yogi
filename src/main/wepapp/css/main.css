@@ -25,7 +25,6 @@ header{
 .logo-img-area{
     height:28px;
     width:105px;
-    background-image: url("./logo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -12,7 +12,7 @@
 <body>
     <div class="header-wrap">
         <header>
-            <div class="logo-img-area"></div>
+            <div class="logo-img-area" style="background-image:url('logo.jpg')"></div>
             <div class="right-header">
                 <button>로그인/회원가입</button>
                 <div class="ham-img-area"></div>
