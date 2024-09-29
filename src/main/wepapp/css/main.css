@@ -136,6 +136,18 @@ main .section-box p{
     height:60%;
 
 }
+.resv-a:link {
+    color: white;
+}
+.resv-a:visited {
+    color: white;
+}
+.resv-a:hover {
+    color: white;
+}
+.resv-a:active {
+    color: white;
+}
 
 #search-text-area{
     width:350px;
